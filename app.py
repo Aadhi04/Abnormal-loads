@@ -15,8 +15,12 @@ ALLOWED_EXTENSIONS = set(['pdf', 'jpg', 'tif'])
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/test', methods=['GET'])
+@app.route('/', methods=['GET'])
 def test():
+    return {'message': 'Hello World!'}
+
+@app.route('/test', methods=['GET'])
+def test1():
     return {'hello': 'world'}
 
 
